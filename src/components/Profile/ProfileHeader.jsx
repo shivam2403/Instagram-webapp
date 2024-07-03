@@ -33,8 +33,9 @@ const ProfileHeader = () => {
       <AvatarGroup
         size={{ base: "xl", md: "2xl" }}
         justifySelf={"center"}
-        alignSelf={"flex-start"}
+        alignSelf={"center"}
         mx={"auto"}
+        ml={{base:"35"}}
       >
         <Avatar
           name="As a Programmer"
@@ -51,7 +52,7 @@ const ProfileHeader = () => {
           alignItems={"center"}
           w={"full"}
         >
-          <Text fontSize={{ base: "sm", md: "lg" }}>{userProfile?.username}</Text>
+        <Text fontSize={{ base: "sm", md: "lg" }}>{userProfile?.username}</Text>
           {visitingOwnProfileAndAuth && 
             <Flex gap={4} alignItems={"center"} justifyContent={"center"}>
               <Button
