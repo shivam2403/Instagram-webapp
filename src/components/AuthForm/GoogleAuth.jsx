@@ -19,7 +19,7 @@ const GoogleAuth = ({prefix}) => {
           return;
         }
 
-        const userRef=doc(firestore,"users",newUser.user.uid);
+        const userRef=doc(firestore,"users",newUser?.user?.uid);
         const userSnap=await getDoc(userRef);
 
         if(userSnap.exists()){
@@ -30,18 +30,18 @@ const GoogleAuth = ({prefix}) => {
         }else{
           // signup
           const userDoc={
-            uid:newUser.user.uid,
-            email:newUser.user.email,
-            username:newUser.user.email.split('@')[0],
-            fullName:newUser.user.displayName,
+            uid:newUser?.user?.uid,
+            email:newUser.user?.email,
+            username:newUser.user?.email.split('@')[0],
+            fullName:newUser.user?.displayName,
             bio:"",
-            profilePicURL:newUser.user.photoURL,
+            profilePicURL:newUser.user?.photoURL,
             followers:[],
             following:[],
             posts:[],
             createdAt: Date.now(),
         }
-        await setDoc(doc(firestore,"users",newUser.user.uid),userDoc);
+        await setDoc(doc(firestore,"users",newUser.user?.uid),userDoc);
         localStorage.setItem("user-info",JSON.stringify(userDoc))
         loginUser(userDoc)
         }
