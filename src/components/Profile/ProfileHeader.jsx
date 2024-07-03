@@ -29,13 +29,15 @@ const ProfileHeader = () => {
       direction={{ base: "column", sm: "row" }}
       alignItems={'center'}
       justifyContent={'center'}
+      ml={{base:"-12"}}
+
     >
       <AvatarGroup
         size={{ base: "xl", md: "2xl" }}
         justifySelf={"center"}
         alignSelf={"center"}
         mx={"auto"}
-        ml={{base:"35"}}
+        ml={{base:"38"}}
       >
         <Avatar
           name="As a Programmer"
