@@ -7,6 +7,7 @@ import ProfilePage from "./pages/ProfilePage/ProfilePage"
 import useAuthStore from "./store/authStore"
 import { useAuthState } from "react-firebase-hooks/auth"
 import { auth } from "./firebase/firebase"
+import ForgotPassword from "./components/AuthForm/ForgotPassword"
 
 function App() {
   const [user]=useAuthState(auth);
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={user ? <HomePage/> : <Navigate to='/auth'/>}/>
           <Route path="/auth" element={!user ? <AuthPage/> : <Navigate to='/'/>}/>
+          <Route path="/forgot-password" element={<ForgotPassword/>}/>
           <Route path="/:username" element={<ProfilePage/>}/>
         </Routes>
     </PageLayouts>

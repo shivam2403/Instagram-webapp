@@ -10,7 +10,7 @@ const AuthPage = () => {
 
             {/* Left */}
             <Box display={{base:"none", md:"block"}}>
-              <Image src='/auth.png' h={550} alt='Phone image'/>
+              <Image src='/auth_.png' h={550} borderRadius={20} alt='Phone image'/>
             </Box>
 
             {/* Right  */}

@@ -20,7 +20,22 @@ const AuthForm = () => {
     <>
       <Box border={"1px solid gray"} borderRadius={4} padding={5} mt={10} w={350}>
         <VStack spacing={4}>
-            <Image src='/logo.png' h={24} cursor={"pointer"} alt='Instagram'/>
+				<Text
+            textAlign={"left"}
+            cursor={"pointer"}
+            fontSize={30}
+            fontWeight={"bold"}
+          >
+            <Flex direction={"row"} alignItems={"center"} gap={"10px"}>
+              <img
+                style={{ height: "35px" }}
+                src="https://img.icons8.com/?size=100&id=Kp6YDPLCRJIe&format=png&color=000000"
+              />
+              <span>
+                Snap<span style={{ color: "skyblue" }}>io.</span>
+              </span>
+            </Flex>
+          </Text>
             
             {isLogin ? <Login/> : <SignUp/>}
 
@@ -39,7 +54,7 @@ const AuthForm = () => {
       <Box border={"1px solid gray"} borderRadius={4} padding={5} w={350}>
         <Flex alignItems={"center"} justifyContent={"center"}>
             <Box mx={2} fontSize={14}>
-                {!isLogin ? "Don't have an account?" : "Already have an account"}
+                { isLogin ? "Don't have an account?" : "Already have an account?"}
             </Box>
             <Box onClick={()=>setIsLogin(!isLogin)} color={"blue.500"} cursor={"pointer"}>
                 {isLogin ? "Sign up" : "Log in"}
